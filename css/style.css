@@ -3404,3 +3404,66 @@ banner photo orbiting lines
     height: 60vh;
   }
 }
+
+
+/* -------------------------------------------
+
+about avatar B&W hover effect
+
+------------------------------------------- */
+.mil-hover-color {
+  filter: grayscale(1) drop-shadow(3px 3px 0px #101010);
+  transition: filter 3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mil-hover-color:hover {
+  filter: grayscale(0) saturate(1.1) drop-shadow(3px 3px 0px #101010);
+}
+
+
+/* -------------------------------------------
+
+fav text scanning highlight
+
+------------------------------------------- */
+.mil-fav-marquee {
+  font-family: "Space Mono", monospace;
+  font-size: 11px;
+  color: #999;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+.mil-fav-marquee span {
+  position: relative;
+  display: inline-block;
+  background-image: linear-gradient(
+    110deg,
+    #999 0%,
+    #999 30%,
+    #fa4729 35%,
+    #fa4729 65%,
+    #999 70%,
+    #999 100%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: scan-highlight 4s linear infinite;
+}
+.mil-fav-marquee:hover span {
+  animation-play-state: paused;
+}
+
+@keyframes scan-highlight {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+
+/* Hide percentage numbers in skills */
+.mil-progress-track .mil-progress .mil-upper {
+  display: none;
+}
