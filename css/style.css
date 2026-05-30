@@ -3165,3 +3165,51 @@ footer visibility fix
 .mil-footer p {
   color: #101010;
 }
+
+
+/* -------------------------------------------
+
+torii gate background
+
+------------------------------------------- */
+.mil-onepage .mil-section::before {
+  content: "";
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 380px;
+  background-image: url(../img/torii.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 1;
+}
+
+/* Don't show on banner (already has its own scan-line ::before) */
+.mil-banner::before {
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  transform: none;
+  background-image: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(16, 16, 16, 0.015) 3px,
+    rgba(16, 16, 16, 0.015) 4px
+  );
+  opacity: 1;
+}
+
+@media screen and (max-width: 1200px) {
+  .mil-onepage .mil-section::before {
+    width: 200px;
+    height: 260px;
+  }
+}

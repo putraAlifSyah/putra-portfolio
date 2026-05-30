@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none" stroke="#101010" stroke-width="1.5" opacity="0.04">
+  <!-- Top beam (kasagi) -->
+  <path d="M30 80 L370 80" stroke-width="3"/>
+  <!-- Curved top (shimaki) -->
+  <path d="M20 90 Q200 70 380 90" stroke-width="2.5"/>
+  <!-- Second beam (nuki) -->
+  <path d="M70 130 L330 130" stroke-width="2"/>
+  <!-- Left pillar (hashira) -->
+  <line x1="90" y1="90" x2="95" y2="480" stroke-width="2.5"/>
+  <!-- Right pillar (hashira) -->
+  <line x1="310" y1="90" x2="305" y2="480" stroke-width="2.5"/>
+  <!-- Left pillar extension above -->
+  <line x1="90" y1="90" x2="88" y2="60" stroke-width="2"/>
+  <!-- Right pillar extension above -->
+  <line x1="310" y1="90" x2="312" y2="60" stroke-width="2"/>
+  <!-- Center tablet (gakuzuka) -->
+  <rect x="170" y="95" width="60" height="30" rx="2" stroke-width="1.5"/>
+</svg>
