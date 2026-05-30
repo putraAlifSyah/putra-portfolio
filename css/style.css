@@ -3938,7 +3938,7 @@ clock display
 }
 .mil-clock {
   position: fixed;
-  bottom: 30px;
+  top: 90px;
   right: 30px;
   font-family: "Space Mono", monospace;
   font-size: 12px;
@@ -3946,7 +3946,7 @@ clock display
   color: #101010;
   letter-spacing: 2px;
   white-space: nowrap;
-  text-align: right;
+  text-align: center;
   pointer-events: none;
   z-index: 999;
 }
