@@ -3951,18 +3951,23 @@ clock display
   z-index: 999;
 }
 .mil-clock .mil-clock-label {
-  display: block;
-  font-size: 9px;
-  color: #fa4729;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  color: rgba(16, 16, 16, 0.06);
   font-weight: 700;
-  letter-spacing: 3px;
-  margin-bottom: 2px;
+  letter-spacing: 5px;
+  z-index: -1;
 }
 .mil-clock .mil-clock-time {
   display: block;
   font-size: 13px;
   color: #101010;
   letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
 }
 .mil-clock .mil-clock-seconds {
   color: #fa4729;
