@@ -413,9 +413,11 @@ $(function () {
             var lang = (typeof currentLang !== 'undefined') ? currentLang : 'en';
             var config = timezones[lang] || timezones['en'];
             var now = new Date();
-            var options = { timeZone: config.tz, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+            var options = { timeZone: config.tz, hour: '2-digit', minute: '2-digit', hour12: false };
+            var secOptions = { timeZone: config.tz, second: '2-digit' };
             var timeStr = now.toLocaleTimeString('en-GB', options);
-            clockEl.innerHTML = '<span class="mil-clock-label">' + config.label + '</span>' + timeStr;
+            var secStr = now.toLocaleTimeString('en-GB', secOptions).slice(-2);
+            clockEl.innerHTML = '<span class="mil-clock-label">' + config.label + '</span><span class="mil-clock-time">' + timeStr + '<span class="mil-clock-seconds">:' + secStr + '</span></span>';
         }
 
         updateClock();

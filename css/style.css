@@ -3930,23 +3930,40 @@ typewriter quote effect
 clock display
 
 ------------------------------------------- */
+.mil-lang-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
 .mil-clock {
   font-family: "Space Mono", monospace;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 700;
-  text-transform: uppercase;
   color: #101010;
-  letter-spacing: 1px;
-  margin-left: 40px;
+  letter-spacing: 2px;
   white-space: nowrap;
+  text-align: center;
+  pointer-events: all;
 }
 .mil-clock .mil-clock-label {
+  display: block;
   font-size: 9px;
-  color: #999;
-  font-weight: 400;
-  margin-right: 8px;
+  color: #fa4729;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 2px;
 }
-@media screen and (max-width: 992px) {
+.mil-clock .mil-clock-time {
+  display: block;
+  font-size: 15px;
+  color: #101010;
+  letter-spacing: 3px;
+}
+.mil-clock .mil-clock-seconds {
+  color: #fa4729;
+}
+@media screen and (max-width: 1200px) {
   .mil-clock {
     display: none;
   }
