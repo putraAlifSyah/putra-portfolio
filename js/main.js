@@ -404,7 +404,7 @@ $(function () {
     if (clockEl) {
         var timezones = {
             en: { tz: 'America/New_York', label: 'NYC' },
-            id: { tz: 'Asia/Makassar', label: 'WITA' },
+            id: { tz: 'Asia/Jakarta', label: 'JKT' },
             jp: { tz: 'Asia/Tokyo', label: '東京' },
             kr: { tz: 'Asia/Seoul', label: '서울' }
         };
