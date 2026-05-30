@@ -22,7 +22,7 @@ const translations = {
         kr: 'IT 전문가 <span class="mil-accent">&amp;</span> 웹 개발자'
     },
     "banner-desc": {
-        en: "Experienced Information Engineer from Kota Palopo, Indonesia. Specializing in JavaScript, PHP, Laravel, and WordPress. Passionate about technology and collaborative teamwork.",
+        en: "Experienced Information Engineer from Palopo City, Indonesia. Specializing in JavaScript, PHP, Laravel, and WordPress. Passionate about technology and collaborative teamwork.",
         id: "Information Engineer berpengalaman dari Kota Palopo, Indonesia. Spesialisasi di JavaScript, PHP, Laravel, dan WordPress. Antusias terhadap teknologi dan kerja sama tim.",
         jp: "インドネシア・パロポ市出身の経験豊富な情報エンジニア。JavaScript、PHP、Laravel、WordPressを専門としています。テクノロジーとチームワークに情熱を持っています。",
         kr: "인도네시아 팔로포 출신의 경험 많은 정보 엔지니어. JavaScript, PHP, Laravel, WordPress 전문. 기술과 협업에 열정적입니다."
@@ -82,7 +82,7 @@ const translations = {
         kr: "컴퓨터 네트워크 공학 전공. 네트워킹, 하드웨어, 소프트웨어의 기초 학습."
     },
     "edu-smp-desc": {
-        en: "Junior high school education in Kota Palopo.",
+        en: "Junior high school education in Palopo City.",
         id: "Pendidikan menengah pertama di Kota Palopo.",
         jp: "パロポ市での中学校教育。",
         kr: "팔로포시 중학교 교육."
