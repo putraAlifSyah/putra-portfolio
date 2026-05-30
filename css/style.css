@@ -3639,3 +3639,287 @@ mobile breathing space fix
     display: none;
   }
 }
+
+
+/* -------------------------------------------
+
+gaming x japanese elements
+
+------------------------------------------- */
+
+/* Pixel font for gaming accents */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+/* RPG-style status box on banner */
+.mil-banner .mil-banner-text::before {
+  content: "▼ STATUS // 状態";
+  display: block;
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+  color: #fa4729;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  padding-left: 4px;
+  border-left: 3px solid #fa4729;
+}
+
+/* Game HUD corner brackets on portfolio items */
+.mil-portfolio-item::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 18px;
+  height: 18px;
+  border-top: 2px solid #fa4729;
+  border-left: 2px solid #fa4729;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.6;
+  transition: opacity 0.4s ease, width 0.3s ease, height 0.3s ease;
+}
+.mil-portfolio-item:hover::before {
+  opacity: 1;
+  width: 24px;
+  height: 24px;
+}
+
+/* Mission-style labels for skill names */
+#skills .col-xl-6 > .mil-upper:first-child::before {
+  content: "▸ ";
+  color: #fa4729;
+  font-weight: 700;
+}
+
+/* JRPG-style chapter marker on experience timeline */
+.mil-timeline-slider .mil-icon-box::before {
+  content: "CH." attr(data-chapter, "??");
+  position: absolute;
+  top: -25px;
+  left: 0;
+  font-family: "Press Start 2P", monospace;
+  font-size: 8px;
+  color: rgba(250, 71, 41, 0.5);
+  letter-spacing: 1px;
+}
+
+/* Power-up indicator on service icon boxes */
+#services .mil-icon-box .mil-text-icon::before {
+  content: "EX";
+  display: block;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  background: #fa4729;
+  color: #fff;
+  font-family: "Press Start 2P", monospace;
+  font-size: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #101010;
+  z-index: 1;
+  letter-spacing: 0;
+}
+
+/* Japanese RPG dialogue box style on testimonial speech bubble */
+.mil-reviews-slider .swiper-slide .col-lg-7 > p:first-child {
+  position: relative;
+}
+.mil-reviews-slider .swiper-slide .col-lg-7 > p:first-child::before {
+  content: "▼";
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  color: #fa4729;
+  font-size: 12px;
+  animation: blink-arrow 1.2s steps(2) infinite;
+}
+@keyframes blink-arrow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Achievement unlocked style for blog dateline */
+.mil-blog-card .mil-blog-content > p:first-child::before {
+  content: "▣ ";
+  color: #fa4729;
+  font-family: "Press Start 2P", monospace;
+  font-size: 8px;
+}
+
+/* Game start prompt above the contact form */
+#contact h2::after {
+  content: " 〉〉";
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.4em;
+  color: #fa4729;
+  letter-spacing: 2px;
+  vertical-align: middle;
+}
+
+/* Japanese game UI: "select" style on filter buttons */
+.mil-filter a.mil-current::before {
+  content: "◉ ";
+  color: #fa4729;
+  font-size: 0.8em;
+}
+.mil-filter a:not(.mil-current)::before {
+  content: "○ ";
+  color: rgba(16, 16, 16, 0.3);
+  font-size: 0.8em;
+}
+
+/* HP/MP bar style for progress bars */
+.mil-progress-track {
+  position: relative;
+}
+.mil-progress-track::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 10%,
+    rgba(16, 16, 16, 0.04) 10%,
+    rgba(16, 16, 16, 0.04) 10.5%
+  );
+  pointer-events: none;
+}
+
+/* Save point inspired marker for section dots */
+.mil-pagination .mil-dot.mil-active::before {
+  display: none;
+}
+
+/* Japanese version-style mark in footer */
+.mil-footer p::after {
+  content: " // ver. 2.5.0";
+  font-family: "Press Start 2P", monospace;
+  font-size: 8px;
+  color: rgba(250, 71, 41, 0.6);
+  margin-left: 10px;
+  letter-spacing: 0;
+}
+
+/* Loading dots near tagline */
+.mil-jp-tagline::before {
+  content: "▸ ";
+  color: #fa4729;
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 1200px) {
+  .mil-banner .mil-banner-text::before {
+    text-align: left;
+  }
+  #services .mil-icon-box .mil-text-icon::before {
+    width: 20px;
+    height: 20px;
+    font-size: 6px;
+  }
+}
+
+
+/* -------------------------------------------
+
+remove dot bg, add crumpled paper effect behind banner photo
+
+------------------------------------------- */
+
+/* Hide the dotted bg-title-boxed on banner */
+.mil-banner .mil-bg-title-boxed {
+  display: none;
+}
+
+/* Hide the dot bg-items inside banner if any */
+.mil-banner .mil-bg-item {
+  display: none;
+}
+
+/* Crumpled paper effect behind banner photo */
+.mil-banner-photo {
+  background: transparent;
+}
+
+/* Make sure the speed lines pseudo doesn't conflict */
+.mil-banner-photo::before {
+  background: repeating-linear-gradient(
+    -15deg,
+    transparent,
+    transparent 12px,
+    rgba(16, 16, 16, 0.025) 12px,
+    rgba(16, 16, 16, 0.025) 13px
+  );
+}
+
+
+/* -------------------------------------------
+
+animated rain behind banner photo
+
+------------------------------------------- */
+.mil-rain-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.mil-rain-drop {
+  position: absolute;
+  top: -80px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: rgba(16, 16, 16, 0.06);
+  animation: rain-fall 3s linear infinite;
+}
+
+@keyframes rain-fall {
+  0% { transform: translateY(-100%) rotate(-45deg); opacity: 0.08; }
+  50% { opacity: 0.05; }
+  100% { transform: translateY(100vh) rotate(-45deg); opacity: 0; }
+}
+
+@media screen and (max-width: 1200px) {
+  .mil-rain-bg {
+    display: none;
+  }
+}
+
+
+/* -------------------------------------------
+
+typewriter quote effect
+
+------------------------------------------- */
+.mil-typewriter {
+  font-family: "Space Mono", monospace;
+  font-size: 13px;
+  color: #999;
+  letter-spacing: 1px;
+  min-height: 20px;
+}
+.mil-typewriter::after {
+  content: "█";
+  font-size: 13px;
+  color: #fa4729;
+  animation: cursor-blink 0.8s step-end infinite;
+}
+@keyframes cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
