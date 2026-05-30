@@ -3589,35 +3589,3 @@ manga/comic effects
   box-shadow: 4px 4px 0px #101010;
   border-width: 2.5px;
 }
-
-
-/* -------------------------------------------
-
-mobile banner photo placement
-
-------------------------------------------- */
-.mil-banner-photo-mobile {
-  display: none;
-}
-@media screen and (max-width: 1200px) {
-  .mil-banner-photo-mobile {
-    display: block;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .mil-banner-photo-mobile img {
-    width: 220px;
-    height: auto;
-    filter: drop-shadow(4px 4px 0px #101010) grayscale(1);
-    -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
-    transition: filter 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .mil-banner-photo-mobile img:active {
-    filter: drop-shadow(4px 4px 0px #101010) grayscale(0) saturate(1.1);
-  }
-  /* Hide the desktop photo on mobile */
-  .mil-banner-photo {
-    display: none;
-  }
-}
