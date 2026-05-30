@@ -3589,3 +3589,53 @@ manga/comic effects
   box-shadow: 4px 4px 0px #101010;
   border-width: 2.5px;
 }
+
+
+/* -------------------------------------------
+
+mobile breathing space fix
+
+------------------------------------------- */
+@media screen and (max-width: 1200px) {
+  .mil-onepage .mil-section .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .mil-banner .mil-banner-text {
+    padding: 60px 30px;
+  }
+  .mil-buttons-frame {
+    justify-content: flex-start;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .mil-onepage .mil-section .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .mil-banner .mil-banner-text {
+    padding: 40px 20px;
+  }
+  .mil-icon-box {
+    flex-direction: column;
+  }
+  .mil-icon-box .mil-box-text {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 15px;
+  }
+}
+
+
+/* Hide frame borders on mobile */
+@media screen and (max-width: 1200px) {
+  .mil-frame {
+    display: none;
+  }
+}
