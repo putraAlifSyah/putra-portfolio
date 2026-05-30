@@ -423,3 +423,23 @@ $(function () {
         updateClock();
         setInterval(updateClock, 1000);
     }
+
+
+    /**
+        Dark Mode Toggle
+    **/
+    var darkBtn = document.getElementById('dark-toggle');
+    if (darkBtn) {
+        var savedTheme = localStorage.getItem('portfolio-theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            darkBtn.querySelector('.mil-dark-icon').textContent = '◑';
+        }
+
+        darkBtn.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            var isDark = document.body.classList.contains('dark-mode');
+            darkBtn.querySelector('.mil-dark-icon').textContent = isDark ? '◑' : '◐';
+            localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
+        });
+    }
