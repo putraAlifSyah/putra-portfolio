@@ -276,20 +276,20 @@ $(function () {
     if (typewriterEl) {
         var quotesLang = {
             en: [
-                '"To a great mind, nothing is little."',
-                '"Education never ends, Watson."'
+                '"To a <span class="mil-accent">great mind</span>, nothing is little."',
+                '"<span class="mil-accent">Education</span> never ends, Watson."'
             ],
             id: [
-                '"Bagi pikiran yang hebat, tidak ada yang kecil."',
-                '"Pendidikan tidak pernah berakhir, Watson."'
+                '"Bagi <span class="mil-accent">pikiran yang hebat</span>, tidak ada yang kecil."',
+                '"<span class="mil-accent">Pendidikan</span> tidak pernah berakhir, Watson."'
             ],
             jp: [
-                '"偉大な精神にとって、小さなことなど何もない。"',
-                '"教育に終わりはない、ワトソン。"'
+                '"<span class="mil-accent">偉大な精神</span>にとって、小さなことなど何もない。"',
+                '"<span class="mil-accent">教育</span>に終わりはない、ワトソン。"'
             ],
             kr: [
-                '"위대한 정신에게 사소한 것은 없다."',
-                '"교육은 끝이 없다, 왓슨."'
+                '"<span class="mil-accent">위대한 정신</span>에게 사소한 것은 없다."',
+                '"<span class="mil-accent">교육</span>은 끝이 없다, 왓슨."'
             ]
         };
         var quoteIndex = 0;
@@ -308,29 +308,49 @@ $(function () {
         function typeWriter() {
             var quotes = getQuotes();
             var currentQuote = quotes[quoteIndex % quotes.length];
+            // Strip HTML tags for character counting
+            var plainText = currentQuote.replace(/<[^>]*>/g, '');
 
             if (!isDeleting) {
-                typewriterEl.textContent = currentQuote.substring(0, charIndex + 1);
                 charIndex++;
-
-                if (charIndex === currentQuote.length) {
+                if (charIndex > plainText.length) {
                     isDeleting = true;
+                    typewriterEl.innerHTML = currentQuote;
                     setTimeout(typeWriter, pauseAfterType);
                     return;
                 }
+                // Build visible text respecting HTML tags
+                typewriterEl.innerHTML = buildPartialHTML(currentQuote, charIndex);
                 setTimeout(typeWriter, typeSpeed);
             } else {
-                typewriterEl.textContent = currentQuote.substring(0, charIndex - 1);
                 charIndex--;
-
-                if (charIndex === 0) {
+                if (charIndex <= 0) {
+                    charIndex = 0;
                     isDeleting = false;
                     quoteIndex = (quoteIndex + 1) % quotes.length;
+                    typewriterEl.innerHTML = '';
                     setTimeout(typeWriter, pauseAfterDelete);
                     return;
                 }
+                typewriterEl.innerHTML = buildPartialHTML(currentQuote, charIndex);
                 setTimeout(typeWriter, deleteSpeed);
             }
+        }
+
+        function buildPartialHTML(html, visibleChars) {
+            var result = '';
+            var count = 0;
+            var inTag = false;
+            for (var i = 0; i < html.length; i++) {
+                if (html[i] === '<') { inTag = true; result += html[i]; continue; }
+                if (html[i] === '>') { inTag = false; result += html[i]; continue; }
+                if (inTag) { result += html[i]; continue; }
+                count++;
+                if (count <= visibleChars) {
+                    result += html[i];
+                }
+            }
+            return result;
         }
 
         setTimeout(typeWriter, 1000);
