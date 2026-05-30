@@ -333,9 +333,21 @@ $(function () {
             return quotesLang[lang] || quotesLang['en'];
         }
 
+        // Shuffle quotes on load
+        function shuffleArray(arr) {
+            for (var i = arr.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+            return arr;
+        }
+        var shuffledOrder = shuffleArray(Array.from({length: quotesLang.en.length}, function(_, i) { return i; }));
+
         function typeWriter() {
             var quotes = getQuotes();
-            var currentQuote = quotes[quoteIndex % quotes.length];
+            var currentQuote = quotes[shuffledOrder[quoteIndex % shuffledOrder.length]];
             // Strip HTML tags for character counting
             var plainText = currentQuote.replace(/<[^>]*>/g, '');
 
@@ -355,7 +367,7 @@ $(function () {
                 if (charIndex <= 0) {
                     charIndex = 0;
                     isDeleting = false;
-                    quoteIndex = (quoteIndex + 1) % quotes.length;
+                    quoteIndex = (quoteIndex + 1) % shuffledOrder.length;
                     typewriterEl.innerHTML = '';
                     setTimeout(typeWriter, pauseAfterDelete);
                     return;
