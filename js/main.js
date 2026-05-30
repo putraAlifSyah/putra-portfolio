@@ -395,3 +395,29 @@ $(function () {
 
         setTimeout(typeWriter, 1000);
     }
+
+
+    /**
+        Clock based on selected language timezone
+    **/
+    var clockEl = document.getElementById('mil-clock');
+    if (clockEl) {
+        var timezones = {
+            en: { tz: 'America/New_York', label: 'NYC' },
+            id: { tz: 'Asia/Makassar', label: 'WITA' },
+            jp: { tz: 'Asia/Tokyo', label: '東京' },
+            kr: { tz: 'Asia/Seoul', label: '서울' }
+        };
+
+        function updateClock() {
+            var lang = (typeof currentLang !== 'undefined') ? currentLang : 'en';
+            var config = timezones[lang] || timezones['en'];
+            var now = new Date();
+            var options = { timeZone: config.tz, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+            var timeStr = now.toLocaleTimeString('en-GB', options);
+            clockEl.innerHTML = '<span class="mil-clock-label">' + config.label + '</span>' + timeStr;
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+    }
