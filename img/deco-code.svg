@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" fill="none" stroke="#101010" stroke-width="0.5" opacity="0.04">
+  <!-- Code brackets -->
+  <text x="20" y="30" font-family="monospace" font-size="14" fill="#101010" stroke="none">&lt;/&gt;</text>
+  <text x="120" y="60" font-family="monospace" font-size="10" fill="#101010" stroke="none">if(true){</text>
+  <text x="130" y="75" font-family="monospace" font-size="10" fill="#101010" stroke="none">return;</text>
+  <text x="120" y="90" font-family="monospace" font-size="10" fill="#101010" stroke="none">}</text>
+  <text x="10" y="120" font-family="monospace" font-size="10" fill="#101010" stroke="none">$ npm run build</text>
+  <text x="50" y="150" font-family="monospace" font-size="12" fill="#101010" stroke="none">function(){};</text>
+  <text x="20" y="180" font-family="monospace" font-size="10" fill="#101010" stroke="none">const data = [];</text>
+  <text x="80" y="210" font-family="monospace" font-size="14" fill="#101010" stroke="none">{...}</text>
+  <text x="10" y="240" font-family="monospace" font-size="10" fill="#101010" stroke="none">@import url();</text>
+  <text x="100" y="270" font-family="monospace" font-size="10" fill="#101010" stroke="none">SELECT * FROM</text>
+  <text x="30" y="295" font-family="monospace" font-size="12" fill="#101010" stroke="none">git push origin</text>
+</svg>

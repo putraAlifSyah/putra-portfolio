@@ -2593,137 +2593,20 @@ japanese-inspired elements
 
 /* Kanji watermark decoration */
 .mil-banner::after {
-  content: "技";
-  position: absolute;
-  bottom: 10%;
-  right: 5%;
-  font-size: 200px;
-  font-family: "Noto Sans JP", serif;
-  font-weight: 700;
-  color: rgba(16, 16, 16, 0.06);
-  pointer-events: none;
-  line-height: 1;
-}
-@media screen and (max-width: 1200px) {
-  .mil-banner::after {
-    font-size: 120px;
-    bottom: 5%;
-    right: 2%;
-  }
+  content: none;
 }
 
-/* Section kanji watermarks */
-#about::after {
-  content: "人";
-  position: absolute;
-  top: 10%;
-  right: 5%;
-  font-size: 180px;
-  font-family: "Noto Sans JP", serif;
-  font-weight: 700;
-  color: rgba(16, 16, 16, 0.05);
-  pointer-events: none;
-}
-#skills::after {
-  content: "能";
-  position: absolute;
-  top: 10%;
-  left: 5%;
-  font-size: 180px;
-  font-family: "Noto Sans JP", serif;
-  font-weight: 700;
-  color: rgba(16, 16, 16, 0.05);
-  pointer-events: none;
-}
-#education::after {
-  content: "学";
-  position: absolute;
-  top: 10%;
-  right: 5%;
-  font-size: 180px;
-  font-family: "Noto Sans JP", serif;
-  font-weight: 700;
-  color: rgba(16, 16, 16, 0.05);
-  pointer-events: none;
-}
-#experience::after {
-  content: "歴";
-  position: absolute;
-  bottom: 10%;
-  right: 5%;
-  font-size: 180px;
-  font-family: "Noto Sans JP", serif;
-  font-weight: 700;
-  color: rgba(16, 16, 16, 0.05);
-  pointer-events: none;
-}
-#services::after {
-  content: "務";
-  position: absolute;
-  top: 10%;
-  left: 5%;
-  font-size: 180px;
-  font-family: "Noto Sans JP", serif;
-  font-weight: 700;
-  color: rgba(16, 16, 16, 0.05);
-  pointer-events: none;
-}
-#portfolio::after {
-  content: "作";
-  position: absolute;
-  top: 10%;
-  right: 5%;
-  font-size: 180px;
-  font-family: "Noto Sans JP", serif;
-  font-weight: 700;
-  color: rgba(16, 16, 16, 0.05);
-  pointer-events: none;
-}
-#testimonials::after {
-  content: "声";
-  position: absolute;
-  bottom: 10%;
-  left: 5%;
-  font-size: 180px;
-  font-family: "Noto Sans JP", serif;
-  font-weight: 700;
-  color: rgba(16, 16, 16, 0.05);
-  pointer-events: none;
-}
-#blog::after {
-  content: "記";
-  position: absolute;
-  top: 10%;
-  right: 5%;
-  font-size: 180px;
-  font-family: "Noto Sans JP", serif;
-  font-weight: 700;
-  color: rgba(16, 16, 16, 0.05);
-  pointer-events: none;
-}
+/* Section kanji watermarks - removed, replaced by group watermarks */
+#about::after,
+#skills::after,
+#education::after,
+#experience::after,
+#services::after,
+#portfolio::after,
+#testimonials::after,
+#blog::after,
 #contact::after {
-  content: "繋";
-  position: absolute;
-  bottom: 10%;
-  right: 5%;
-  font-size: 180px;
-  font-family: "Noto Sans JP", serif;
-  font-weight: 700;
-  color: rgba(16, 16, 16, 0.05);
-  pointer-events: none;
-}
-@media screen and (max-width: 1200px) {
-  #about::after,
-  #skills::after,
-  #education::after,
-  #experience::after,
-  #services::after,
-  #portfolio::after,
-  #testimonials::after,
-  #blog::after,
-  #contact::after {
-    font-size: 100px;
-  }
+  content: none;
 }
 
 /* Japanese-style footer with subtle top line */
@@ -3211,5 +3094,313 @@ torii gate background
   .mil-onepage .mil-section::before {
     width: 200px;
     height: 260px;
+  }
+}
+
+
+/* -------------------------------------------
+
+group reference watermarks
+
+------------------------------------------- */
+#services::before,
+#education::before,
+#testimonials::before,
+#blog::before,
+#contact::before {
+  display: none;
+}
+
+/* Watermark text elements with hover effect */
+.mil-watermark {
+  position: absolute;
+  font-size: 150px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  color: rgba(16, 16, 16, 0.03);
+  pointer-events: auto;
+  z-index: 0;
+  letter-spacing: 8px;
+  line-height: 1;
+  cursor: default;
+  transition: color 0.6s cubic-bezier(0, 0, 0.3642, 1), text-shadow 0.6s cubic-bezier(0, 0, 0.3642, 1), transform 0.6s cubic-bezier(0, 0, 0.3642, 1);
+  user-select: none;
+}
+.mil-watermark:hover {
+  color: rgba(250, 71, 41, 0.12);
+  text-shadow: 0 0 40px rgba(250, 71, 41, 0.05);
+  transform: scale(1.08);
+}
+@media screen and (max-width: 1200px) {
+  .mil-watermark {
+    font-size: 80px;
+    letter-spacing: 5px;
+  }
+}
+
+
+/* -------------------------------------------
+
+decorative elements - JP x tech x journalism
+
+------------------------------------------- */
+
+/* Code snippet decoration on skills section */
+#skills .container::after {
+  content: "";
+  position: absolute;
+  top: 5%;
+  right: 0;
+  width: 180px;
+  height: 280px;
+  background-image: url(../img/deco-code.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Network topology on experience section */
+#experience .container::after {
+  content: "";
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  width: 160px;
+  height: 160px;
+  background-image: url(../img/deco-network.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Terminal cursor blink on banner tagline */
+.mil-jp-tagline::after {
+  content: "█";
+  font-size: 12px;
+  margin-left: 5px;
+  animation: blink 1.2s step-end infinite;
+  color: #fa4729;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Japanese newspaper column lines on education */
+#education .container::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 3%;
+  width: 1px;
+  height: 60%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(16, 16, 16, 0.06) 0px,
+    rgba(16, 16, 16, 0.06) 20px,
+    transparent 20px,
+    transparent 25px
+  );
+  pointer-events: none;
+}
+#education .container::after {
+  content: "";
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  width: 1px;
+  height: 50%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(16, 16, 16, 0.04) 0px,
+    rgba(16, 16, 16, 0.04) 15px,
+    transparent 15px,
+    transparent 20px
+  );
+  pointer-events: none;
+}
+
+/* Subtle grid paper texture on services (IT support feel) */
+#services .container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(16, 16, 16, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 16, 16, 0.015) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Journalism dateline accent on blog cards */
+.mil-blog-card .mil-blog-content::before {
+  content: "—";
+  display: block;
+  font-family: "Space Mono", monospace;
+  font-size: 20px;
+  color: #fa4729;
+  margin-bottom: 10px;
+  letter-spacing: -3px;
+}
+
+/* IP address style decoration on contact */
+#contact .container::before {
+  content: "192.168.1.1 // connected";
+  position: absolute;
+  bottom: 5%;
+  right: 3%;
+  font-family: "Space Mono", monospace;
+  font-size: 10px;
+  color: rgba(16, 16, 16, 0.06);
+  letter-spacing: 2px;
+  pointer-events: none;
+}
+
+/* Japanese vertical text accent on portfolio */
+#portfolio .container::before {
+  content: "作品集";
+  position: absolute;
+  top: 15%;
+  right: 2%;
+  writing-mode: vertical-rl;
+  font-family: "Noto Sans JP", serif;
+  font-size: 14px;
+  color: rgba(16, 16, 16, 0.06);
+  letter-spacing: 10px;
+  pointer-events: none;
+}
+
+/* Vertical Japanese text on testimonials */
+#testimonials .container::before {
+  content: "お客様の声";
+  position: absolute;
+  top: 10%;
+  left: 2%;
+  writing-mode: vertical-rl;
+  font-family: "Noto Sans JP", serif;
+  font-size: 13px;
+  color: rgba(16, 16, 16, 0.05);
+  letter-spacing: 8px;
+  pointer-events: none;
+}
+
+/* Subtle hash/version marker on about section */
+#about .container::before {
+  content: "v2.0 // 2025";
+  position: absolute;
+  bottom: 5%;
+  left: 3%;
+  font-family: "Space Mono", monospace;
+  font-size: 10px;
+  color: rgba(16, 16, 16, 0.06);
+  letter-spacing: 2px;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 1200px) {
+  #skills .container::after,
+  #experience .container::after,
+  #education .container::before,
+  #education .container::after,
+  #portfolio .container::before,
+  #testimonials .container::before,
+  #about .container::before,
+  #contact .container::before {
+    display: none;
+  }
+}
+
+
+/* -------------------------------------------
+
+banner photo orbiting lines
+
+------------------------------------------- */
+.mil-banner-photo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.mil-banner-photo .mil-banner-image {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  filter: drop-shadow(4px 4px 0px #101010) drop-shadow(8px 8px 0px rgba(250, 71, 41, 0.25)) grayscale(1);
+  -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+  animation: float 4s ease-in-out infinite;
+  transition: filter 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mil-banner-photo:hover .mil-banner-image {
+  filter: drop-shadow(4px 4px 0px #101010) drop-shadow(8px 8px 0px rgba(250, 71, 41, 0.25)) grayscale(0) saturate(1.1);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.mil-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mil-orbit-1 {
+  width: 70%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  border-color: rgba(250, 71, 41, 0.15);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  animation: orbit-spin 8s linear infinite;
+}
+
+.mil-orbit-2 {
+  width: 82%;
+  height: 82%;
+  transform: translate(-50%, -50%);
+  border-color: rgba(16, 16, 16, 0.08);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation: orbit-spin 12s linear infinite reverse;
+}
+
+.mil-orbit-3 {
+  width: 94%;
+  height: 94%;
+  transform: translate(-50%, -50%);
+  border-color: rgba(250, 71, 41, 0.08);
+  border-top-color: transparent;
+  border-left-color: transparent;
+  animation: orbit-spin 16s linear infinite;
+}
+
+@keyframes orbit-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@media screen and (max-width: 1200px) {
+  .mil-banner-photo {
+    height: 60vh;
+  }
+  .mil-banner-photo .mil-banner-image {
+    height: 60vh;
   }
 }

@@ -252,3 +252,18 @@ $(function () {
 	}
 
 });
+
+
+    /**
+        Banner photo color reveal on hover
+    **/
+    var bannerPhoto = document.querySelector('.mil-banner-photo');
+    if (bannerPhoto) {
+        bannerPhoto.addEventListener('mousemove', function(e) {
+            var rect = bannerPhoto.getBoundingClientRect();
+            var x = ((e.clientX - rect.left) / rect.width) * 100;
+            var y = ((e.clientY - rect.top) / rect.height) * 100;
+            bannerPhoto.style.setProperty('--mouse-x', x + '%');
+            bannerPhoto.style.setProperty('--mouse-y', y + '%');
+        });
+    }
